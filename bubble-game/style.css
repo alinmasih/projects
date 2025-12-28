@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+/* font-family = "Bitcount Single" */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    height: 100%;
+    width: 100%;
+}
+
+
+#main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(106, 181, 106);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#console{
+    height: 90%;
+    width: 100%;
+    margin: 0px 100px;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#console-bar{
+    height: 15%;
+    width: 100%;
+    background-color: rgb(25, 81, 25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#ele {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+#ele h4{
+    font-size: 32px;
+    color: white;
+    font-family: "Bitcount Single";
+    font-weight: 800;
+    text-align: center;
+}
+
+.card{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    z-index: 99;
+    border-radius: 10px;
+    color: black;
+    font-size: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Bitcount Single";
+}
+
+
+#console-body{
+    height: 80%;
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    overflow: hidden;
+    
+}
+.bubble{
+    height: 60px;
+    width: 60px;
+    background-color: rgb(25, 81, 25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: "Bitcount Single";
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 10px;
+
+}
+
+.bubble:hover{
+    cursor: pointer;
+    background-color: rgb(19, 56, 19);
+}
+
+#btn{
+    padding: 10px 60px;
+    background-color: chocolate;
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+}

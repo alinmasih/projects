@@ -1,0 +1,48 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Users collection - only user can read/write their own data
+    match /users/{userId} {
+      allow read, write: if request.auth.uid == userId;
+      
+      // Medicines are stored in subcollections
+      match /slots/{slotName}/medicines/{medicineId} {
+        allow read: if request.auth.uid == userId;
+        allow write: if request.auth.uid == userId && isValidMedicine(request.resource.data);
+      }
+    }
+    
+    // Medicine Logs - only user can read/write their own logs
+    match /medicineLogs/{logId} {
+      allow read: if request.auth.uid == resource.data.userId;
+      allow write: if request.auth.uid == resource.data.userId && isValidMedicineLog(request.resource.data);
+      allow update: if request.auth.uid == resource.data.userId;
+    }
+    
+    // Firebase Storage rules (in separate .rules file, but documented here)
+    // - Users can only upload to their own directory: medicines/{userId}/...
+    // - 5MB file size limit per image
+    // - Only image files (jpeg, png)
+  }
+  
+  // Helper functions
+  function isValidMedicine(data) {
+    return data.keys().hasAll(['name', 'imageUrls', 'embeddings', 'createdAt'])
+      && data.name is string
+      && data.imageUrls is list
+      && data.embeddings is list
+      && data.createdAt is timestamp;
+  }
+  
+  function isValidMedicineLog(data) {
+    return data.keys().hasAll(['userId', 'slot', 'taken', 'missed', 'whatsappSent', 'createdAt', 'updatedAt'])
+      && data.userId is string
+      && data.slot is string
+      && data.taken is bool
+      && data.missed is bool
+      && data.whatsappSent is bool
+      && data.createdAt is timestamp
+      && data.updatedAt is timestamp;
+  }
+}

@@ -1,0 +1,61 @@
+name: medicine_tracker
+description: Medicine Tracker App with WhatsApp Alerts via whatsapp-web.js
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase
+  firebase_core: ^2.24.0
+  cloud_firestore: ^4.14.0
+  firebase_storage: ^11.5.0
+  firebase_messaging: ^14.7.0
+
+  # Camera & Image Processing
+  camera: ^0.10.5+5
+  image: ^4.1.1
+  image_picker: ^1.0.7
+
+  # TensorFlow Lite
+  tflite_flutter: ^0.10.4
+  tflite_flutter_helper: ^0.0.2
+
+  # State Management
+  riverpod: ^2.4.1
+  flutter_riverpod: ^2.4.1
+  riverpod_generator: ^2.3.11
+
+  # Local Notifications
+  flutter_local_notifications: ^16.3.0
+  timezone: ^0.9.2
+
+  # Utilities
+  intl: ^0.19.0
+  uuid: ^4.0.0
+  logger: ^2.0.2
+
+  # UI & Navigation
+  go_router: ^13.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^3.0.0
+
+  # Code Generation
+  build_runner: ^2.4.8
+
+flutter:
+  uses-material-design: true
+
+  # Assets for ML model (will be added later)
+  assets:
+    - assets/models/
+    - assets/labels/

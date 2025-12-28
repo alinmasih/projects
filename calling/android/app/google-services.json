@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "75309871962",
+    "project_id": "calling-ec958",
+    "storage_bucket": "calling-ec958.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:75309871962:android:8bd8d7705a968844d23963",
+        "android_client_info": {
+          "package_name": "com.example.wifi_voice_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCc5F8yxG4-098YYLysCz18B1fx58obm6Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
